@@ -48,9 +48,9 @@ Let's add Cognitive Services to our deployment (ARM) template and deploy it.
 
 In [Lab 2](../Lab2/README.md) we created an ARM template to deploy the backbone of our application (app service plan, web app (mvc) and storage account).
 
-We will start from that template and add the Cognitive Services resource to it
+We will start from that template and add the Cognitive Services resource to it.
 
-Open the existing [ARM template](../Lab2/deployment/gab2019.json) and [ARM template parameters](../Lab2/deployment/gab2019.parameters.json) from lab2.
+Open the existing [ARM template](../Lab2/medias/gab2019.json) and [ARM template parameters](../Lab2/medias/gab2019.parameters.json) from lab2.
 
 **1 - Add the Cognitive Services resource:**
 

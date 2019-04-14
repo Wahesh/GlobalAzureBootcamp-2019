@@ -4,11 +4,11 @@
 
 ## Goal
 
-In this lab you will create an Azure Resource Manager template to provision your Azure resources and configure them automatically.
+In this lab, you will create an Azure Resource Manager template to provision your Azure resources and configure them automatically.
 
 ## What is Azure Resource Manager (ARM) template
 
-Azure Resource Manager allows you to provision your applications using a declarative template. In a single template, you can deploy multiple services along with their dependencies. You use the same template to repeatedly deploy your application during every stage of the application life cycle.
+Azure Resource Manager allows you to provision your applications using a declarative template. In a single template, you can deploy multiple services along with their dependencies. You use the same template repeatedly, to  deploy your application during every stage of the application life cycle.
 
 ## The benefits of using Azure Resource Manager (ARM) template
 
@@ -20,16 +20,16 @@ Resource Manager provides several benefits:
 * You can define the dependencies between resources so they're deployed in the correct order.
 * You can see your template as a documentation of your infrastructure.  ( [Infrastructure as a code](https://docs.microsoft.com/en-us/azure/devops/learn/what-is-infrastructure-as-code?WT.mc_id=globalazure-github-frbouche) )
 
-ARM template are pretty simple.  They are just json files that describe the infrastructure of your project. You define your structure in a template and then use it with a parameter file.
+ARM templates are pretty simple.  They are just json files that describe the infrastructure of your project. You define your structure in a template and then use it with a parameter file.
 
 ```txt
 myproject.json
 myproject.parameters.json
 ```
 
-The two together can be deploy multiple environments.  You will change your parameter file depending on which environment you are deploying.
+The two templates together can be deployed in multiple environments.  You will change your parameter file depending on which environment you are deploying.
 
-We could want to deploy a VM or a Web application.  Let's say, in that case that your development environment could required a smaller resource than your production environment. With ARM, it will be the same structure, the same code, except your parameter file will change the size of your VM or Web application.
+We might want to deploy a VM or a Web application.  Let's say, your development environment requires a smaller resource than your production environment. With ARM, it will be the same structure, the same code, except your parameters in the file will change the size of your VM or Web application.
 
 Also, when you deploying resources on Azure, ARM will parallelize you deployment.  It's really the fastest way to deploy.
 
@@ -53,13 +53,13 @@ To learn more on how to deploy an ARM template with Azure Portal, click [here](h
 
 ![Powershell_arm](http://techgenix.com/tgwordpress/wp-content/uploads/2018/06/1050-05-08-1024x390.png)
 
-To learn more on how to deploy an ARM template with PowerShell, click [here](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-deploy?WT.mc_id=globalazure-github-frbouche)
+To learn more on how to deploy an ARM template with PowerShell, click [here](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-deploy?WT.mc_id=globalazure-github-frbouche).
 
-To learn more on how to deploy an ARM template with CLI, click [here](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-deploy-cli?WT.mc_id=globalazure-github-frbouche)
+To learn more on how to deploy an ARM template with CLI, click [here](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-deploy-cli?WT.mc_id=globalazure-github-frbouche).
 
 # Template format
 
-A Resource manager template is simply a JSON file using this structure
+A Resource manager template is simply a JSON file using this structure.
 
 ```json
 {
@@ -91,7 +91,7 @@ Now that we know a bit more on these ARM templates, let see how we can use them 
 
 ## Part 1 - Create our first ARM template
 
-1. Under your solution folder, add a new folder `Deployment`.  This is where all your deployment scripts will be located.
+1. Under your solution folder, add a new folder `deployment`.  This is where all your deployment scripts will be located.
 
 ```txt
   C:\dev\gab2019\deployment
@@ -125,7 +125,7 @@ If you have install the extension, you can do it easily if you type `arm!` at th
 }
 ```
 
-6. Let's add our first Azure resource. Between the `"resources": []` brackets add a storage Account.  To do so, you still can use the extension with the keyword `arm-stg` or copy the following snippet.
+6. Let's add our first Azure resource. Between the `"resources": []` brackets add a storage Account.  To do so, you  can still use the extension with the keyword `arm-stg` or copy the following snippet.
 
 ```json
     {
@@ -204,15 +204,15 @@ Your template should now look like this:
   git push
 ```
 
-2. Browse to your Azure DevOps project
+2. Browse to your Azure DevOps project.
 
-3. Edit your Release pipeline
+3. Edit your Release pipeline.
 
 4. Add a new task Azure Resource ...
 
-5. Configure your task
+5. Configure your task.
 
-6. Save your pipeline and create a new release
+6. Save your pipeline and create a new release.
 
 You should now see a new resource in your resource group.
 
@@ -330,7 +330,7 @@ Your template should now look like this:
 
 ## Part 4 - Add parameters to your template
 
-We now need to replace all place holders with parameters. This way, we will be able to customize our template and reuse our existing feature
+We now need to replace all place holders with parameters. This way, we will be able to customize our template and reuse our existing feature. 
 
 Replace your node `parameters` with the following snippet:
 
